@@ -1,0 +1,11 @@
+--- a/build/make/core/Makefile
++++ b/build/make/core/Makefile
+@@ -1615,6 +1615,8 @@
+ ifeq ($(BOARD_VENDOR_RAMDISK_BOOTSTRAP),true)
+ 	$(hide) mkdir -p $(addprefix $(TARGET_VENDOR_RAMDISK_OUT)/,$(PRIVATE_BOOTSTRAP_DIRS))
+ 	$(hide) cp -fp $(TARGET_RAMDISK_OUT)/init $(TARGET_VENDOR_RAMDISK_OUT)/init
++	$(hide) mkdir -p $(TARGET_VENDOR_RAMDISK_OUT)/system/bin
++	$(hide) cp -fp $(TARGET_RAMDISK_OUT)/init $(TARGET_VENDOR_RAMDISK_OUT)/system/bin/init
+ endif
+ 	$(MKBOOTFS) -d $(TARGET_OUT) $(TARGET_VENDOR_RAMDISK_OUT) $(PRIVATE_ADDITIONAL_DIR) | $(COMPRESSION_COMMAND) > $@
+ 
