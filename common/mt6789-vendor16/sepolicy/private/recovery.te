@@ -116,6 +116,8 @@ recovery_only(`
   allow recovery data_file_type:sock_file getattr;
   allow recovery data_file_type:fifo_file getattr;
   allow recovery unlabeled:{ fifo_file sock_file } getattr;
+  allow recovery dex2oat_exec:file getattr;
+  allow recovery system_file:sock_file getattr;
   allow recovery mnt_vendor_file:dir create_dir_perms;
   allow recovery mnt_vendor_file:file create_file_perms;
   allowxperm recovery { system_data_file system_data_root_file media_rw_data_file vendor_data_file }:dir ioctl { 0x6613 0x6615 0x6617 };
