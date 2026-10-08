@@ -206,5 +206,6 @@ recovery_only(`
   allow init self:global_capability_class_set sys_module;
   allow init rootfs:system module_load;
   allow ueventd self:global_capability_class_set sys_nice;
+  # keycheck from AnyKernel3 zips opens /dev/input/event* read-write to read volume keys.
   allow recovery input_device:chr_file rw_file_perms;
 ')
