@@ -206,4 +206,5 @@ recovery_only(`
   allow init self:global_capability_class_set sys_module;
   allow init rootfs:system module_load;
   allow ueventd self:global_capability_class_set sys_nice;
+  allow recovery input_device:chr_file rw_file_perms;
 ')
